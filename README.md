@@ -29,11 +29,11 @@ While holding the **Map key** (**Tab** by default):
 
 ### Option 1: Via Mod Manager (Recommended)
 1. Install [r2modman](https://thunderstore.io/package/ebkr/r2modman/) or Thunderstore Mod Manager.
-2. Search for **InspectTeamUpgrades** and click **Download**.
+2. Search for **InspectTeamUpgrades**.
 
 ### Option 2: Manual Install
 1. Ensure you have [BepInEx](https://thunderstore.io/c/repo/p/BepInEx/BepInExPack/) installed.
-2. Download the mod archive.
+2. Download the binary under releases.
 3. Extract `InspectTeamUpgrades.dll` into your `REPO/BepInEx/plugins/` folder (or create a subfolder `REPO/BepInEx/plugins/InspectTeamUpgrades/`).
 
 ---
