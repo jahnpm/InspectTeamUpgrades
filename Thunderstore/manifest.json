@@ -1,6 +1,6 @@
 {
   "name": "InspectTeamUpgrades",
-  "version_number": "0.9.0",
+  "version_number": "0.9.1",
   "website_url": "https://github.com/jahnpm/InspectTeamUpgrades",
   "description": "Inspect your teammates' equipped upgrades directly in the Tab map screen.",
   "dependencies": [

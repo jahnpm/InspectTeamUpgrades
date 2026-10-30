@@ -3,6 +3,7 @@ using System.Linq;
 using System.Text;
 using HarmonyLib;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.LowLevel;
 
 namespace InspectTeamUpgrades.Patches
 {
@@ -99,6 +100,16 @@ namespace InspectTeamUpgrades.Patches
                 if (WasPressed(keyboard, Plugin.PrevPageKey.Value)) direction--;
             }
 
+            if (Plugin.EnableGamepad.Value)
+            {
+                Gamepad gamepad = Gamepad.current;
+                if (gamepad != null)
+                {
+                    if (WasPressed(gamepad, Plugin.NextPageGamepadButton.Value)) direction++;
+                    if (WasPressed(gamepad, Plugin.PrevPageGamepadButton.Value)) direction--;
+                }
+            }
+
             if (direction == 0)
             {
                 return;
@@ -154,7 +165,7 @@ namespace InspectTeamUpgrades.Patches
 
             if (names.Length == 0)
             {
-                names.Append("<alpha=#88><i>No upgrades</i>");
+                names.Append("<alpha=#88><i>—</i>");
             }
 
             __instance.Text.text = names.ToString();
@@ -169,6 +180,18 @@ namespace InspectTeamUpgrades.Patches
         private static bool WasPressed(Keyboard keyboard, Key key)
         {
             return key != Key.None && keyboard[key].wasPressedThisFrame;
+        }
+
+        private static bool WasPressed(Gamepad gamepad, GamepadButton button)
+        {
+            try
+            {
+                return gamepad[button]?.wasPressedThisFrame == true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         private static int SelectedIndex()
@@ -226,7 +249,7 @@ namespace InspectTeamUpgrades.Patches
         {
             "TestPlayer",
             "AVeryLongTestPlayerName", // exercises name truncation
-            "EmptyPlayer",             // exercises the "No upgrades" state
+            "EmptyPlayer",             // exercises the empty upgrades state
         };
 
         private static readonly List<Dictionary<string, int>> TestUpgrades = new List<Dictionary<string, int>>();

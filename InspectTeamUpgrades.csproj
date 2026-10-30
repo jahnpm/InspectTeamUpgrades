@@ -9,7 +9,7 @@
     <RootNamespace>InspectTeamUpgrades</RootNamespace>
     <Product>InspectTeamUpgrades</Product>
     <Authors>jahnpm</Authors>
-    <Version>0.1.0</Version>
+    <Version>0.9.1</Version>
     <LangVersion>latest</LangVersion>
     <Nullable>disable</Nullable>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>

@@ -3,6 +3,7 @@ using BepInEx.Configuration;
 using BepInEx.Logging;
 using HarmonyLib;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.LowLevel;
 
 namespace InspectTeamUpgrades
 {
@@ -11,13 +12,16 @@ namespace InspectTeamUpgrades
     {
         public const string PluginGuid = "jahnpm.InspectTeamUpgrades";
         public const string PluginName = "InspectTeamUpgrades";
-        public const string PluginVersion = "0.9.0";
+        public const string PluginVersion = "0.9.1";
 
         internal static ManualLogSource Log;
         internal static ConfigEntry<bool> EnableScrollWheel;
         internal static ConfigEntry<bool> InvertScrollWheel;
         internal static ConfigEntry<Key> NextPageKey;
         internal static ConfigEntry<Key> PrevPageKey;
+        internal static ConfigEntry<bool> EnableGamepad;
+        internal static ConfigEntry<GamepadButton> NextPageGamepadButton;
+        internal static ConfigEntry<GamepadButton> PrevPageGamepadButton;
         internal static ConfigEntry<bool> ResetPageOnClose;
         internal static ConfigEntry<int> TestPages;
 
@@ -35,6 +39,12 @@ namespace InspectTeamUpgrades
                 "Key to show the next player's upgrades while the map (Tab) is open.");
             PrevPageKey = Config.Bind("Controls", "PrevPageKey", Key.LeftArrow,
                 "Key to show the previous player's upgrades while the map (Tab) is open.");
+            EnableGamepad = Config.Bind("Controls", "EnableGamepad", true,
+                "Cycle player upgrade pages with a gamepad while the map is open.");
+            NextPageGamepadButton = Config.Bind("Controls", "NextPageGamepadButton", GamepadButton.DpadRight,
+                "Gamepad button to show the next player's upgrades while the map is open.");
+            PrevPageGamepadButton = Config.Bind("Controls", "PrevPageGamepadButton", GamepadButton.DpadLeft,
+                "Gamepad button to show the previous player's upgrades while the map is open.");
             ResetPageOnClose = Config.Bind("General", "ResetPageOnClose", true,
                 "Jump back to your own upgrades every time the map is closed.");
             TestPages = Config.Bind("Debug", "TestPages", 0,

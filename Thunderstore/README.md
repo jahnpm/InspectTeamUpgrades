@@ -6,7 +6,7 @@ A client-side mod for **R.E.P.O.** that lets you inspect your teammates' equippe
 
 ## Features
 
-- **Teammate Upgrade Pages:** Hold **Tab** to view your upgrades, and scroll or press arrow keys to cycle through each teammate's equipped upgrades.
+- **Teammate Upgrade Pages:** Hold **Tab** to view your upgrades, and scroll, press arrow keys, or use your gamepad to cycle through each teammate's equipped upgrades.
 - **Client-Side Only:** Other players do **not** need the mod installed for you to see their upgrades.
 - **Seamless UI:** Matches the game's built-in UI style and page indicator (`< 1/4 >`). Automatically jumps back to your own upgrades when closing the map or collecting an upgrade.
 
@@ -14,12 +14,12 @@ A client-side mod for **R.E.P.O.** that lets you inspect your teammates' equippe
 
 ## Controls
 
-While holding the **Map key** (**Tab** by default):
+While holding the **Map key** (**Tab** / Controller **B** by default):
 
 | Action | Default Input |
 |---|---|
-| **Next Player's Upgrades** | **Mouse Wheel Down** or **Right Arrow (→)** |
-| **Previous Player's Upgrades** | **Mouse Wheel Up** or **Left Arrow (←)** |
+| **Next Player's Upgrades** | **Mouse Wheel Down**, **Right Arrow (→)**, or **D-Pad Right** |
+| **Previous Player's Upgrades** | **Mouse Wheel Up**, **Left Arrow (←)**, or **D-Pad Left** |
 
 *(All controls are configurable in the mod config file or r2modman config editor.)*
 
@@ -48,6 +48,9 @@ Settings are saved in `BepInEx/config/jahnpm.InspectTeamUpgrades.cfg` (or editab
 | **Controls** | `InvertScrollWheel` | `false` | Invert scroll direction (default: scroll down = next page). |
 | **Controls** | `NextPageKey` | `RightArrow` | Keyboard key to show the next player's upgrades. |
 | **Controls** | `PrevPageKey` | `LeftArrow` | Keyboard key to show the previous player's upgrades. |
+| **Controls** | `EnableGamepad` | `true` | Cycle player upgrade pages with a gamepad while the map is open. |
+| **Controls** | `NextPageGamepadButton` | `DpadRight` | Gamepad button to show the next player's upgrades. |
+| **Controls** | `PrevPageGamepadButton` | `DpadLeft` | Gamepad button to show the previous player's upgrades. |
 | **General** | `ResetPageOnClose` | `true` | Jump back to your own upgrades every time the map is closed. |
 | **Debug** | `TestPages` | `0` | Number of fake test pages to append for solo testing (0 = off). |
 
